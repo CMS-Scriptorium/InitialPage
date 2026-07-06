@@ -31,7 +31,7 @@ class InitialPage
 
     public static $instance;
 
-    protected function __construct(array $params = [])
+    protected function __construct()
     {
         // 1 - internal css
         I::insertCssFile(WB_URL . self::CSS_PATH, 'HEAD BTM+');
