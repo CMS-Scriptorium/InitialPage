@@ -20,3 +20,4 @@ $module_license     = 'CC BY-SA 4.0';
 $module_description = 'Admintool to jump direct to a backendpage oder administation tool after login.';
 $module_home        = '-';
 $module_guid        = 'E176273D-D9DD-4D96-80F6-652C00461F99';
+$module_icon        = 'fa fa-hand-o-right';

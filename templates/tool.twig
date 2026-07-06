@@ -1,4 +1,13 @@
 {% autoescape false %}
+    {% macro build_option(page, deep) %}
+        <option value="{{ page.page_id }}">{% if(deep > 0) %}{% for i in 1..deep %}- {% endfor %}{% endif %}{{ page.page_title }}</option>
+        {% if( page.subpages|length > 0) %}
+            {% import _self as make_option %}
+            {% for subpage in page.subpages %}
+                {{ make_option.build_option(subpage, deep+1) }}
+            {% endfor %}}
+        {% endif %}}
+    {% endmacro %}
 <p class="spacer1"></p>
     <div class="headbox">
         <div class="ui message olive center large">
@@ -15,10 +24,10 @@
 <table class="ui celled table">
     <thead>
         <tr>
-            <th class="one wide column">Id</th>
-            <th class="three wide column">User</th>
-            <th class="six wide column">Page</th>
-            <th class="two wide column">Params</th
+            <th class="one wide column">{{ lang.TH_LABELS.id }}</th>
+            <th class="three wide column">{{ lang.TH_LABELS.user }}</th>
+            <th class="six wide column">{{ lang.TH_LABELS.page }}</th>
+            <th class="two wide column">{{ lang.TH_LABELS.params }}</th
         </tr></thead>
     <tbody>
         <tr>
@@ -26,8 +35,12 @@
             <td data-label="Age">Alsussd</td>
             <td data-label="Job">
                 <select class="ui select">
-                    <option>Hello World</option>
-                    <option>Du mich erst</option>
+                    <optgroup label="Pages">                  
+                        {% import _self as make_option %}
+                        {% for page in pages %}
+                            {{ make_option.build_option( page, 0) }}
+                        {% endfor %}
+                        </ortgroup>
                 </select>
             </td>
             <td>

@@ -27,4 +27,11 @@ class EN
     public const string HELLO_WORLD = "Hello world! That's me: <em>'".__CLASS__."'</em>!";
     public const string MODULE_DESCRIPTION = 'Nothing more and nothing less than a private study for WBCE and some additional code.';
     public const string NO_INTERFACE = "No interface implantation at this time!";
+    
+    public const array TH_LABELS = [
+        'id'     => "ID",
+        'user'   => "User",
+        'page'   => "Page",
+        'params' => "opt. param"
+    ];
 }

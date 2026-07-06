@@ -17,6 +17,9 @@ namespace InitialPage\core;
 
 use I;
 use Subway\core\traits\Singleton;
+use Subway\core\Pages;
+use InitialPage\core\language;
+
 use const WB_URL;
 
 /**
@@ -31,11 +34,29 @@ class InitialPage
 
     public static $instance;
 
+    public array $lang = [];
+    public array $pageTree = [];
+
     protected function __construct()
     {
-        // 1 - internal css
+        // [1] internal css
         I::insertCssFile(WB_URL . self::CSS_PATH, 'HEAD BTM+');
-        // 2 - internal js
+        
+        // [2] internal js
         I::insertJsFile(WB_URL . self::JS_PATH, 'HEAD BTM+');
+        
+        // [3] language
+        $lookUpClass = "\\InitialPage\\core\\language\\". LANGUAGE;
+        if (!class_exists($lookUpClass, true))
+        {
+            $lookUpClass = "\\InitialPage\\core\\language\\EN";
+        }
+        $this->lang = $lookUpClass::getInstance()->getConstants();
+
+        // [4] PageTree
+        $this->pageTree = Pages::getInstance()->getPageTree(
+                0, // root
+                ['page_id', 'page_title', 'menu_title']
+        );
     }
 }
