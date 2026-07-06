@@ -16,4 +16,4 @@ use Subway\core\sql\Database;
 if (defined('WB_URL'))
 {
     Database::drop("{TP}mod_initial_page");
-};
+}
