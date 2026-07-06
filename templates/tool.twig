@@ -1,13 +1,42 @@
 {% autoescape false %}
 <p class="spacer1"></p>
-<div class="headbox">
-    <div class="ui message olive center large">
-    <label>
-    {% for icon in icons %}
-        <i class="ui icon {{ icon }}"></i>
-    {% endfor %}
-    </label>{{  Message }}
+    <div class="headbox">
+        <div class="ui message olive center large">
+            <label>
+                {% for icon in icons %}
+                    <i class="ui icon {{ icon }}"></i>
+                {% endfor %}
+            </label>{{  Message }}
+        </div>
     </div>
-</div>
+<p class="spacer1"></p>
+<div class="ip_form_box">
+<form class="ui form">
+<table class="ui celled table">
+    <thead>
+        <tr>
+            <th class="one wide column">Id</th>
+            <th class="three wide column">User</th>
+            <th class="six wide column">Page</th>
+            <th class="two wide column">Params</th
+        </tr></thead>
+    <tbody>
+        <tr>
+            <td data-label="Name">1</td>
+            <td data-label="Age">Alsussd</td>
+            <td data-label="Job">
+                <select class="ui select">
+                    <option>Hello World</option>
+                    <option>Du mich erst</option>
+                </select>
+            </td>
+            <td>
+<input type="text" />
+</td>
+        </tr>
+    </tbody>
+</table>
+</form>
+<div>
 <p class="spacer1"></p>
 {% endautoescape %}
