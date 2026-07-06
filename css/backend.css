@@ -1,0 +1,21 @@
+/**
+ *
+ * @package         WBCE - admintools
+ * @authors         Kant (Aldus)
+ * @version         1.0.0
+ * @platform        WBCE 1.6.x
+ * @license         CC BY-SA 4.0
+ * @license_terms   https://creativecommons.org/licenses/by-sa/4.0/
+ *
+ */
+
+.headbox {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.spacer1 {
+    display: block;
+    width: 100%;
+    height: 32px;
+}

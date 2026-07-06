@@ -1,0 +1,13 @@
+{% autoescape false %}
+<p class="spacer1"></p>
+<div class="headbox">
+    <div class="ui message olive center large">
+    <label>
+    {% for icon in icons %}
+        <i class="ui icon {{ icon }}"></i>
+    {% endfor %}
+    </label>{{  Message }}
+    </div>
+</div>
+<p class="spacer1"></p>
+{% endautoescape %}
