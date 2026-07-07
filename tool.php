@@ -33,7 +33,9 @@ echo $oTwig->render(
         'Message' => "Baustelle!",
         'icons'   => ['coffee', 'code', 'hammer', 'pencil ruler', 'drafting compass'],
         'lang'    => $oINIT->lang,
-        'pages'   => $oINIT->pageTree
+        'pages'   => $oINIT->pageTree,
+        'admintools' => $oINIT->adminTools,
+        'backendPages' => $oINIT->backendPages
     ]
 
 );

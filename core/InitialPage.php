@@ -16,10 +16,11 @@ declare(strict_types=1);
 namespace InitialPage\core;
 
 use I;
-use Subway\core\traits\Singleton;
-use Subway\core\Pages;
 use InitialPage\core\language;
-
+use Subway\core\Pages;
+use Subway\core\sql\Database;
+use Subway\core\traits\Singleton;
+use const LANGUAGE;
 use const WB_URL;
 
 /**
@@ -36,6 +37,8 @@ class InitialPage
 
     public array $lang = [];
     public array $pageTree = [];
+    public array $adminTools = [];
+    public array $backendPages = [];
 
     protected function __construct()
     {
@@ -58,5 +61,25 @@ class InitialPage
                 0, // root
                 ['page_id', 'page_title', 'menu_title']
         );
+
+        // [5] Get all AdminTools
+        Database::executeQuery(
+            "SELECT `directory`, `name` FROM `{TP}addons` WHERE `function` LIKE '%tool%' ORDER BY `name`",
+            true,
+            $this->adminTools,
+            true
+        );
+
+        // [6] Backend-Pages
+        $this->backendPages = [
+            'Start'         => "admin/start/index.php",
+            'Pages'         => "admin/pages/index.php",
+            'Media'         => "admin/media/index.php",
+            'Add-ons'       => "admin/addons/index.php",
+            'Preferences'   => "admin/preferences/index.php",
+            'Settings'      => "admin/settings/index.php",
+            'Admin-Tools'   => "addmintools/index.php",
+            'Access'        => "admin/access/index.php"
+        ];
     }
 }

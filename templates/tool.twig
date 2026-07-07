@@ -40,7 +40,17 @@
                         {% for page in pages %}
                             {{ make_option.build_option( page, 0) }}
                         {% endfor %}
-                        </ortgroup>
+                    </ortgroup>
+                    <optgroup label="Admintools">
+                    {% for tool in admintools %}
+                    <option value="{{ tool.directory }}">{{ tool.name }}</option>
+                    {% endfor %}
+                    </optgroup>
+                    <optgroup label="Backend">
+                        {% for key, value in backendPages %}
+                            <option value="{{ value }}">{{ key }}</option>
+                        {% endfor %}
+                    </optgroup>
                 </select>
             </td>
             <td>
