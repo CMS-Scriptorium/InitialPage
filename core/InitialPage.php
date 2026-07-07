@@ -17,8 +17,10 @@ namespace InitialPage\core;
 
 use I;
 use InitialPage\core\language;
+use Subway\core\css\Fomantic;
 use Subway\core\Pages;
 use Subway\core\sql\Database;
+use Subway\core\template\TwigBox;
 use Subway\core\traits\Singleton;
 use const LANGUAGE;
 use const WB_URL;
@@ -81,5 +83,25 @@ class InitialPage
             'Admin-Tools'   => "addmintools/index.php",
             'Access'        => "admin/access/index.php"
         ];
+    }
+
+    public function getToolInterface(): string
+    {
+        Fomantic::getInstance();
+
+        $oTwig = TwigBox::getInstance();
+        $oTwig->registerModule("InitialPage");
+
+        return $oTwig->render(
+            "@InitialPage/tool.twig",
+            [
+                'Message' => "Baustelle!",
+                'icons' => ['coffee', 'code', 'hammer', 'pencil ruler', 'drafting compass'],
+                'lang' => $this->lang,
+                'pages' => $this->pageTree,
+                'admintools' => $this->adminTools,
+                'backendPages' => $this->backendPages
+            ]
+        );
     }
 }

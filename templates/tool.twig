@@ -5,8 +5,8 @@
             {% import _self as make_option %}
             {% for subpage in page.subpages %}
                 {{ make_option.build_option(subpage, deep+1) }}
-            {% endfor %}}
-        {% endif %}}
+            {% endfor %}
+        {% endif %}
     {% endmacro %}
 <p class="spacer1"></p>
     <div class="headbox">
