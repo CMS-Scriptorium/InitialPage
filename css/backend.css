@@ -25,6 +25,15 @@
     margin: 0 auto;
 }
 
+p.message_img {
+    text-align: center;
+    margin: 0;
+}
+
+img.construction_site {
+    width:64px;
+}
+
 span.icon_hspacer {
     width:0.05em;
     display: inline-block;
