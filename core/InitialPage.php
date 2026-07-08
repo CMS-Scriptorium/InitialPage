@@ -18,6 +18,7 @@ namespace InitialPage\core;
 use I;
 use InitialPage\core\language;
 use Subway\core\css\Fomantic;
+use Subway\core\hash\RandomString;
 use Subway\core\Pages;
 use Subway\core\sql\Database;
 use Subway\core\template\TwigBox;
@@ -109,6 +110,11 @@ class InitialPage
                     'drafting compass',
                     'hammer',
                     'wrench'
+                ],
+                'hidden_values' => [
+                    'job' => 'save',
+                    'tool' => 'InitialPage',
+                    'hash'  => RandomString::generate(16)
                 ],
                 'lang' => $this->lang,
                 'pages' => $this->pageTree,

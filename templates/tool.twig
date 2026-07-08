@@ -24,7 +24,10 @@
 {% endif %}
 <p class="spacer1"></p>
 <div class="ip_form_box">
-<form class="ui form">
+<form class="ui form" method="POST" action="#">
+{% for k,v in hidden_values %}
+    <input type="hidden" name="{{ k }}" value="{{ v }}" />
+{%  endfor %}
 <table class="ui celled table">
     <thead>
         <tr>
