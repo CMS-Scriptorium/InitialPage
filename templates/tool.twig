@@ -15,11 +15,10 @@
 <p class="spacer1"></p>
     <div class="headMessageBox">
         <div class="ui message olive center large">
-            <label>
-                {% for icon in icons %}
-                    <i class="ui icon {{ icon }}"></i><span class="icon_hspacer"></span>
-                {% endfor %}
-            </label>{{  Message }}
+            {% for icon in icons %}
+                <i class="ui icon {{ icon }}"></i><span class="icon_hspacer"></span>
+            {% endfor %}
+            {{  Message }}
         </div>
     </div>
 {% endif %}
