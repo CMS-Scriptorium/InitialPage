@@ -44,6 +44,11 @@ class InitialPage
 
     protected function __construct()
     {
+
+    }
+
+    public function initBackend(): void
+    {
         // [1] internal css
         I::insertCssFile(WB_URL . self::CSS_PATH, 'HEAD BTM+');
         
@@ -83,6 +88,7 @@ class InitialPage
             'Admin-Tools'   => "addmintools/index.php",
             'Access'        => "admin/access/index.php"
         ];
+
     }
 
     public function getToolInterface(): string
@@ -96,7 +102,14 @@ class InitialPage
             "@InitialPage/tool.twig",
             [
                 'Message' => "Baustelle!",
-                'icons' => ['coffee', 'code', 'hammer', 'pencil ruler', 'drafting compass'],
+                'icons' => [
+                    'coffee',
+                    'code',
+                    'pencil ruler',
+                    'drafting compass',
+                    'hammer',
+                    'wrench'
+                ],
                 'lang' => $this->lang,
                 'pages' => $this->pageTree,
                 'admintools' => $this->adminTools,

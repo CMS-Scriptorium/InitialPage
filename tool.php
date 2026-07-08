@@ -1,5 +1,7 @@
 <?php
 
+use InitialPage\core\InitialPage;
+
 /**
  *
  * @package         WBCE - admintools
@@ -16,6 +18,7 @@ if (!defined('WB_URL'))
     header('Location: ../../index.php');
 }
 
-$oINIT = InitialPage\core\InitialPage::getInstance();
+$oINIT = InitialPage::getInstance();
+$oINIT->initBackend();
 
 echo $oINIT->getToolInterface();

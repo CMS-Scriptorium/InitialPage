@@ -8,16 +8,18 @@
             {% endfor %}
         {% endif %}
     {% endmacro %}
+{% if ((Message) && (Message != "")) %}
 <p class="spacer1"></p>
-    <div class="headbox">
+    <div class="headMessageBox">
         <div class="ui message olive center large">
             <label>
                 {% for icon in icons %}
-                    <i class="ui icon {{ icon }}"></i>
+                    <i class="ui icon {{ icon }}"></i><span class="icon_hspacer"></span>
                 {% endfor %}
             </label>{{  Message }}
         </div>
     </div>
+{% endif %}
 <p class="spacer1"></p>
 <div class="ip_form_box">
 <form class="ui form">

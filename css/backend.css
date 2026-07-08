@@ -9,7 +9,7 @@
  *
  */
 
-.headbox {
+.headMessageBox {
     max-width: 50%;
     margin: 0 auto;
 }
@@ -23,4 +23,9 @@
 .ip_form_box {
     max-width: 80%;
     margin: 0 auto;
+}
+
+span.icon_hspacer {
+    width:0.05em;
+    display: inline-block;
 }
