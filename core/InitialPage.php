@@ -45,7 +45,7 @@ class InitialPage
 
     protected function __construct()
     {
-
+        // Nothing to do here now ... see "initBackend"!
     }
 
     public function initBackend(): void
