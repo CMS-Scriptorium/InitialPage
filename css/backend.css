@@ -25,6 +25,10 @@
     margin: 0 auto;
 }
 
+.ip_button {
+    width: 112px;
+}
+
 p.message_img {
     text-align: center;
     margin: 0;

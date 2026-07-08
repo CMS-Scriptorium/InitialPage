@@ -9,7 +9,7 @@
         {% endif %}
     {% endmacro %}
 {% if ((Message) && (Message != "")) %}
-<p class="message_img">
+<p alt="construction sign" class="message_img">
     <img class="construction_site" src="{{ WB_URL }}/modules/Subway/img/construction_site.png"/>
 </p>
 <p class="spacer1"></p>
@@ -59,11 +59,13 @@
                 </select>
             </td>
             <td>
-<input type="text" />
-</td>
+                <input type="text" />
+            </td>
         </tr>
     </tbody>
 </table>
+<input type="button" class="ui button olive ip_button" value="{{ TEXT.SAVE }}" />
+<input type="button" class="ui button ip_button" value="{{ TEXT.CANCEL }}" />
 </form>
 <div>
 <p class="spacer1"></p>
